@@ -1,16 +1,66 @@
-# React + Vite
+# 🌤️ App de Clima
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação de previsão do tempo construída com React, consumindo a API pública Open-Meteo, com painel temático dinâmico e previsão dos próximos 7 dias.
 
-Currently, two official plugins are available:
+🔗 **Ver projeto no ar:** _em breve_
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📌 Funcionalidades
 
-## React Compiler
+- 🔍 Busca de clima atual por nome de cidade
+- 🌡️ Temperatura, umidade e velocidade do vento em tempo real
+- 🎨 Painel temático que muda conforme a condição climática (calor, chuva, frio)
+- 📅 Previsão dos próximos 7 dias com rolagem horizontal
+- 💎 Interface com efeito de vidro (glassmorphism) e animações suaves
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tecnologias utilizadas
 
-## Expanding the ESLint configuration
+- [React](https://react.dev/)
+- [Vite](https://vitejs.dev/)
+- [Open-Meteo API](https://open-meteo.com/) (geocoding e previsão do tempo)
+- CSS puro (glassmorphism, gradientes, animações)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📚 Conceitos aplicados
+
+- **useState** — gerenciamento de múltiplos estados (busca, dados, carregando, erro)
+- **Consumo de API assíncrono** — `fetch` + `async/await` encadeando duas chamadas (geocoding → forecast)
+- **Tratamento de carregamento e erro** — feedback visual em cada estado da busca
+- **Componentização** — separação em `FormularioBusca`, `ResultadoClima`, `PainelTematico` e `PrevisaoSemana`
+- **Lógica de negócio isolada** — funções utilitárias (`src/utils/clima.js`) reutilizadas por múltiplos componentes
+- **Renderização condicional e de listas** — exibição da previsão dos 7 dias com `map`
+
+## 🚀 Como rodar o projeto
+
+\`\`\`bash
+
+# Clone o repositório
+
+git clone https://github.com/SileCout/app-clima-react.git
+
+# Entre na pasta
+
+cd app-clima-react
+
+# Instale as dependências
+
+npm install
+
+# Rode o projeto
+
+npm run dev
+\`\`\`
+
+O projeto estará disponível em `http://localhost:5173`.
+
+## 📌 Próximos passos
+
+Este projeto faz parte de um roteiro de estudos em React. Os próximos passos incluem:
+
+- Roteamento com React Router
+- Gerenciamento de estado global com Context API
+- Aplicação desses conceitos no catálogo de produtos **Zilê**
+
+## 👩‍💻 Autora
+
+Desenvolvido por Josilene S. R. Coutinho, em transição de carreira para a área de TI, cursando Análise e Desenvolvimento de Sistemas.
+
+[LinkedIn](https://www.linkedin.com/in/josilene-sobreira-r-coutinho-578218310/) · [GitHub](https://github.com/SileCout)
