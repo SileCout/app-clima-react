@@ -2,7 +2,7 @@
 
 Aplicação de previsão do tempo construída com React, consumindo a API pública Open-Meteo, com painel temático dinâmico e previsão dos próximos 7 dias.
 
-🔗 **Ver projeto no ar:** _em breve_
+🔗 **[Ver projeto no ar](https://silecout.github.io/app-clima-react/)**
 
 ## 📌 Funcionalidades
 
