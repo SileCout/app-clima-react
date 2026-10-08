@@ -1,3 +1,6 @@
+import FaseLua from './FaseLua'
+import { formatarChanceChuva } from '../utils/chuva'
+
 function getSensacao(temp) {
   if (temp >= 28) return { emoji: '☀️', texto: 'Quente' }
   if (temp >= 18) return { emoji: '🌤️', texto: 'Ameno' }
@@ -30,7 +33,14 @@ function ResultadoClima({ clima }) {
           <span className="valor">{clima.vento} km/h</span>
           <span className="label">Vento</span>
         </div>
+        <div className="dado">
+          <span className="icone" aria-hidden="true">🌧️</span>
+          <span className="valor">{formatarChanceChuva(clima.chanceChuva)}</span>
+          <span className="label">Chance de chuva hoje (máxima)</span>
+        </div>
       </div>
+      <FaseLua />
+      <p className="fonte">Dados meteorológicos: <a href="https://open-meteo.com/" target="_blank" rel="noreferrer">Open-Meteo</a></p>
     </div>
   )
 }
